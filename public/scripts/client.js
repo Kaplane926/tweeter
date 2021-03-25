@@ -5,7 +5,7 @@
  */
 
 const createTweetElement = function(tweet){
-
+  let date = new Date(tweet.created_at)
   
   const createdTweet = `<div class="box">
           <article class="tweet"> 
@@ -15,7 +15,7 @@ const createTweetElement = function(tweet){
             <a class="content">${tweet.content.text}</a>
           </div>
           <div class="footer">
-            <footer>${tweet.created_at} days ago
+            <footer>Tweeted on ${date.toDateString()} 
             </footer>
           </div>
           <br/>`
