@@ -6,15 +6,20 @@
 
 const createTweetElement = function(tweet){
 
-  return `
-        <div class="box">
-          <article class="tweet"> <div ><img class="profile-pic" src="${tweet.user.avatars}"> ${tweet.user.name} </div> <div class="handle">${tweet.user.handle}</div> </article>
-            <div class="content">${tweet.content.text}</div>
+  
+  const createdTweet = `<div class="box">
+          <article class="tweet"> 
+            <img class="profile-pic" src="${tweet.user.avatars}"> ${tweet.user.name} 
+            <a class="handle">${tweet.user.handle}</a> 
+           </article>
+            <a class="content">${tweet.content.text}</a>
           </div>
           <div class="footer">
-        <footer>${tweet.created_at} days ago</footer>
-        </div>
-        <br/>`
+            <footer>${tweet.created_at} days ago
+            </footer>
+          </div>
+          <br/>`
+        return createdTweet
 
 };
 
@@ -23,7 +28,8 @@ const renderTweets = function(tweets) {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
   for(const tweet of tweets){
-    $('#tweets-container').append(createTweetElement(tweet))
+    const newTweet = createTweetElement(tweet)
+    $('#tweets-container').append(newTweet)
   }
 
 }
