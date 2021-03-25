@@ -1,0 +1,51 @@
+.tweet{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 20px;
+  background-color: wheat;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  
+  
+}
+
+.footer {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.content{
+  position: relative;
+  bottom: 30px;
+  display: inline-block;
+  border-bottom: 5px solid black;
+  width: -webkit-fill-available;
+  margin-left: 20px;
+  
+  
+}
+.box{
+  border: 2px solid wheat;
+  background-color: wheat;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  opacity: 50%;
+
+}
+.profile-pic{
+  height: 80px;
+  width: 70px;
+  margin-left: 20px;
+}
+
+.box:hover .handle{
+  font: bold;
+  color: white;
+
+}
+.box:hover{
+  opacity: 100%;
+}
+.handle{
+color: transparent;
+}

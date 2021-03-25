@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
 
     <!-- External JS -->
@@ -28,18 +29,18 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav class = "nav">
-      <span class = "logo">tweeter</span>
-      <div class = "new-tweet-link"> Write a new tweet! </div>
+    <nav class="nav">
+      <span class="logo">tweeter</span>
+      <div class="new-tweet-link"> Write a new tweet! </div>
 
     </nav>
 
     <header>
-      <div class = "profile">
+      <div class="profile">
           <img src="/images/profile-hex.png"> 
       </div>
       <br>
-      <div class = "profile">
+      <div class="profile">
           <h2>Your Name</h2>
       </div>
   </header>
@@ -52,12 +53,35 @@
         <form method = "POST" action = "/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div class = "counter-submit">
+          <div class="counter-submit">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+      <container id="tweets-container">
+        <div class="box">
+          <article class="tweet"> <div ><img class="profile-pic" src="/images/BonfireBatLady.png"> Mildred </div> <div class="handle">@BonfireBatLady</div> </article>
+            <div class="content">Hello World! this is the content right?</div>
+          </div>
+          <div class="footer">
+        <footer>10 days ago</footer>
+        </div>
+      
+      <br/>
+      
+        <div class="box">
+          <article class="tweet"> <div ><img class="profile-pic" src="/images/WideEyes.png"> Sir Fluffer </div> <div class="handle">@SirFluffer </div></article>
+            <div class="content">But I killed it for you...</div>
+          </div>
+          <div class="footer">
+        <footer>12 days ago</footer>
+        </div>
+        <br/>
+      </container>
+      
     </main>
+
   </body>
 </html>
+

@@ -13,10 +13,8 @@ label{
 #tweet-text{
   background-color: transparent;
   border: transparent;
-  border-bottom-style: solid ;
-  border-bottom-width: 100px;
-  border-bottom: black;
-  
+  border-bottom: 5px solid black;
+  width: -webkit-fill-available;
 
 }
 .counter-submit{
