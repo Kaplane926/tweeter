@@ -1,5 +1,5 @@
 header {
-background-color: #ed00b6;
+background-color: black;
 background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
 width: 100%;
 color: #FFFFFF;;
@@ -9,4 +9,31 @@ margin-top: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ed00b6;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+}
+@media only screen and (min-width: 1024px){
+  body{
+    display: flex;
+  }
+  .container{
+    margin-top: 120px;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+  .profile{
+    margin-left: 100px;
+    margin-right: 30px;
+    
+    position: fixed;
+    top: 0%;
+    width: 400px;
+  }
+  .pic{
+    margin-top: 150px;
+  }
+  .name{
+    margin-top: 405px;
+    
+  }
 }

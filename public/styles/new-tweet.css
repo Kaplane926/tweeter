@@ -11,9 +11,10 @@ label{
   border-bottom: black;
 }
 #tweet-text{
+  color: white;
   background-color: transparent;
   border: transparent;
-  border-bottom: 5px solid black;
+  border-bottom: 5px solid wheat;
   width: -webkit-fill-available;
 
 }
