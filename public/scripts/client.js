@@ -78,7 +78,9 @@ $(document).ready(function(){
       }*/
 
     }).then(()=>{
-     
+      
+      $('form').slideUp(500)
+      
       loadTweets();
       
 
