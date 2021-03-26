@@ -50,6 +50,8 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <p class="too-long">Please obey our arbitrary character limit >:(</p>
+        <p class="empty-box">You gotta write something!</p>
         <form method = "POST" action = "/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
@@ -79,6 +81,12 @@
         </div>
         <br/>
       </container>
+      <script>
+        $(document).ready(function(){
+          $('.too-long').hide()
+          $('.empty-box').hide()
+        })
+      </script>
       
     </main>
 

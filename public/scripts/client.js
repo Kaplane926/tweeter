@@ -45,6 +45,7 @@ const renderTweets = function(tweets) {
 
 
 $(document).ready(function(){
+  
   const $button = $('form');
   const loadTweets = function(){
     //$('#tweets-container').html("<container></container>") 
@@ -52,15 +53,21 @@ $(document).ready(function(){
   .then(function (data) {
     renderTweets(data);
   });
+  $('.too-long').slideUp(500)
+  $('.empty-box').slideUp(500)
 }
+  loadTweets()
   $button.submit(function (event) {
     event.preventDefault();
     console.log('Button clicked, performing ajax call...');
-    //console.log($(this).serialize())
-    if($(this).serialize().length >= 140){
-      alert("You've exceeded the character limit!")
-    } else if ($(this).serialize().length === null){
-      alert("Man type something")
+    const tweetLength = $('#tweet-text').val().length
+    
+    if(tweetLength > 140){
+      $('.too-long').slideDown(500)
+      $('.empty-box').slideUp(500)
+    } else if (tweetLength === 0){
+      $('.empty-box').slideDown(500)
+      $('.too-long').slideUp(500)
     } else {
     $.ajax({
       method: "POST",
@@ -69,18 +76,20 @@ $(document).ready(function(){
       /*success: function(resultData){
           console.log("Its the data!",resultData)
       }*/
+
     }).then(()=>{
+     
       loadTweets();
+      
 
     }).catch(()=>{
       
-        alert("You're tweet must contain content.")
-      
       console.log("error")
     })
+  
   }
-    
     })
+
 
 });
 
