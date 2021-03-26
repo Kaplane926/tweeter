@@ -64,24 +64,7 @@
         </form>
       </section>
       <container id="tweets-container">
-        <div class="box">
-          <article class="tweet"> <div ><img class="profile-pic" src="/images/BonfireBatLady.png"> Mildred </div> <div class="handle">@BonfireBatLady</div> </article>
-            <div class="content">Hello World! this is the content right?</div>
-          </div>
-          <div class="footer">
-        <footer>10 days ago</footer>
-        </div>
-      
-      <br/>
-      
-        <div class="box">
-          <article class="tweet"> <div ><img class="profile-pic" src="/images/WideEyes.png"> Sir Fluffer </div> <div class="handle">@SirFluffer </div></article>
-            <div class="content">But I killed it for you...</div>
-          </div>
-          <div class="footer">
-        <footer>12 days ago</footer>
-        </div>
-        <br/>
+        
       </container>
       <script>
         $(document).ready(function(){
@@ -89,6 +72,7 @@
           $('.empty-box').hide()
           $('form').hide()
           $('.new-tweet-link').click( function(){
+            $('')
             $('form').slideDown(500)
           })
         })

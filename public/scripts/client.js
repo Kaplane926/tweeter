@@ -19,10 +19,17 @@ const createTweetElement = function(tweet){
             <a class="handle">${tweet.user.handle}</a> 
            </article>
             <a class="content">${escape(tweet.content.text)}</a>
-          </div>
-          <div class="footer">
-            <footer>Tweeted on ${date.toDateString()} 
+          
+          
+            <footer>
+            <a class="date">Tweeted on ${date.toDateString()} </a>
+            <a class="icons">
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+            </a>
             </footer>
+          
           </div>
           <br/>`
         return createdTweet
