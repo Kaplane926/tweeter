@@ -4,14 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const createTweetElement = function(tweet){
-  let date = new Date(tweet.created_at)
-  
+
+const createTweetElement = function(tweet) {
+  let date = new Date(tweet.created_at);
+  //function to stop XXS
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
   
   const createdTweet = `<div class="box">
           <article class="tweet"> 
@@ -31,8 +32,8 @@ const createTweetElement = function(tweet){
             </footer>
           
           </div>
-          <br/>`
-        return createdTweet
+          <br/>`;
+  return createdTweet;
 
 };
 
@@ -40,71 +41,69 @@ const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-  $('#tweets-container').html("<container></container>")
-  for(const tweet of tweets){
-    const newTweet = createTweetElement(tweet)
-    $('#tweets-container').prepend(newTweet)
+  $('#tweets-container').html("<container></container>");
+  for (const tweet of tweets) {
+    const newTweet = createTweetElement(tweet);
+    $('#tweets-container').prepend(newTweet);
   }
 
-}
+};
 
 
 
 
-$(document).ready(function(){
-   $('.too-long').hide();
-    $('.empty-box').hide();
-    $('form').hide();
-    $('.new-tweet-link').click( function(){
+$(document).ready(function() {
+  //hides the error messages, and the tweet box
+  $('.too-long').hide();
+  $('.empty-box').hide();
+  $('form').hide();
+  //toggles the textarea on tweet box when you click the button in the top left
+  $('.new-tweet-link').click(function() {
     $('form').slideToggle(500);
-          })
+  });
       
   
   const $button = $('form');
-  const loadTweets = function(){
-    //$('#tweets-container').html("<container></container>") 
+  const loadTweets = function() {
+     
     $.ajax('/tweets', { method: 'GET' })
-  .then(function (data) {
-    renderTweets(data);
-  });
-  $('.too-long').slideUp(500)
-  $('.empty-box').slideUp(500)
-}
-  loadTweets()
-  $button.submit(function (event) {
+      .then(function(data) {
+        renderTweets(data);
+      });
+    $('.too-long').slideUp(500);
+    $('.empty-box').slideUp(500);
+  };
+  loadTweets();
+  $button.submit(function(event) {
     event.preventDefault();
     console.log('Button clicked, performing ajax call...');
-    const tweetLength = $('#tweet-text').val().length
-    
-    if(tweetLength > 140){
-      $('.too-long').slideDown(500)
-      $('.empty-box').slideUp(500)
-    } else if (tweetLength === 0){
-      $('.empty-box').slideDown(500)
-      $('.too-long').slideUp(500)
+    const tweetLength = $('#tweet-text').val().length;
+    //checks to make sure tweet is valid, then calls an ajax post request if it is
+    if (tweetLength > 140) {
+      $('.too-long').slideDown(500);
+      $('.empty-box').slideUp(500);
+    } else if (tweetLength === 0) {
+      $('.empty-box').slideDown(500);
+      $('.too-long').slideUp(500);
     } else {
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: $(this).serialize(),
-      /*success: function(resultData){
-          console.log("Its the data!",resultData)
-      }*/
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: $(this).serialize(),
 
-    }).then(()=>{
+      }).then(()=>{
       
       
-      loadTweets();
-      $('#tweet-text').val("")
+        loadTweets();
+        $('#tweet-text').val("");
       
 
-    }).catch(()=>{
-      
-      console.log("error")
-    })
+      }).catch(()=>{
+        alert("Something broke");
+      });
   
-  }
-    })
+    }
+  });
 
 
 });
