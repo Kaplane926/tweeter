@@ -52,6 +52,13 @@ const renderTweets = function(tweets) {
 
 
 $(document).ready(function(){
+   $('.too-long').hide();
+    $('.empty-box').hide();
+    $('form').hide();
+    $('.new-tweet-link').click( function(){
+    $('form').slideToggle(500);
+          })
+      
   
   const $button = $('form');
   const loadTweets = function(){
@@ -86,9 +93,9 @@ $(document).ready(function(){
 
     }).then(()=>{
       
-      $('form').slideUp(500)
       
       loadTweets();
+      $('#tweet-text').val("")
       
 
     }).catch(()=>{
