@@ -15,3 +15,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Desktop Tweeter"](https://github.com/Kaplane926/tweeter/blob/master/docs/desktopTweeter.png?raw=true)
+!["Mobile Tweeter"](https://github.com/Kaplane926/tweeter/blob/master/docs/mobileTweeter.png?raw=true)
+!["Mobile Tweeter Scrolled Down"](https://github.com/Kaplane926/tweeter/blob/master/docs/mobileTweeterTweets.png?raw=true)
